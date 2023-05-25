@@ -7,13 +7,11 @@ import App from './App.svelte'
 describe("testing App", () => {
  
     test("checks if title is properly displayed", () => {
-      //@ts-ignore
       render(App, { props: { } });
       expect(screen.getByText("Todos using Svelte and redux-toolkit")).toBeInTheDocument();
       
     });
     test("checks adding and removing a new todo", async() => {
-        //@ts-ignore
         const { container } = render(App, { props: { } });
         const input = container.querySelector('input');
         const add = screen.getByText('Add Todo')
