@@ -28,20 +28,6 @@ describe("testing App", () => {
         await userEvent.click(remove);
         expect(elem).not.toBeInTheDocument();
     });
-    // @todo mock server response and make test pass 
-    /* test("checks adding and removing a new todo from the api call", async() => {
-        //@ts-ignore
-        const { container } = render(App, { props: { } });
-        
-        const add = screen.getByText('Add Random Todo (API)')
-        expect(add).toBeInTheDocument();
-        await userEvent.click(add);
-
-        const elem = container.querySelector('ul li')
-        //const remove = elem.querySelector('button')
-        expect(elem).toBeInTheDocument();
-        //await userEvent.click(remove);
-        expect(elem).not.toBeInTheDocument();
-    }); */
+    
    
 });
