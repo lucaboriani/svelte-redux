@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { test, describe, expect, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/svelte";
+import { render, screen } from "@testing-library/svelte";
 import userEvent from "@testing-library/user-event";
 import App from './App.svelte'
 
@@ -15,7 +15,7 @@ describe("testing App", () => {
         const { container } = render(App, { props: { } });
         const input = container.querySelector('input');
         const add = screen.getByText('Add Todo')
-        await fireEvent.input(input, { target: { value: "test" } });
+        await userEvent.type(input, "test");
         await userEvent.click(add);
 
         const elem = container.querySelector('ul li')
